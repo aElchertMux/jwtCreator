@@ -5,6 +5,10 @@ I got very tired of editing a single script for a single token. Using this as a 
 
 Add the flag (i.e. -h) of whatever type of JWT token you wish to create. The default is a VIDEO token.
 
+Requirements:
+* Access to your Mux environmental keys (insert into the apiKeys.env file)
+* Python 3.6+
+
 ```
 usage: jwtCreator.py [-h] [-v] [-s] [-t] [-g] playbackID
 
