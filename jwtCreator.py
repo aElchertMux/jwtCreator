@@ -6,8 +6,8 @@ import os
 from dotenv import dotenv_values, load_dotenv
 
 ##################################################################
-# Used For: Internal Mux Support Tools
-# How: usage: jwt_test.py [-h] [-v] [-s] [-t] [-g] playbackID
+# Used For: Mux Tools
+# How: usage: jwtCreator.py [-h] [-v] [-s] [-t] [-g] playbackID
   # positional arguments:
   #   playbackID        The signed playbackID to create the token
 
