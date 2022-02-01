@@ -28,7 +28,7 @@ from dotenv import dotenv_values, load_dotenv
 ############################
 parser = argparse.ArgumentParser()
 parser.add_argument('playbackID', help="The signed playbackID to create the token")
-parser.add_argument('-v', '--video', help='Create a VIDEO token', action='store_true', default=True) #defaults to video being true
+parser.add_argument('-v', '--video', help='Create a VIDEO token [ DEFAULT ]', action='store_true', default=True) #defaults to video being true
 parser.add_argument('-s', '--storyboard', help='Create a STORYBOARD token', action='store_true')
 parser.add_argument('-t', '--thumbnail', help='Create a THUMBNAIL token', action='store_true')
 parser.add_argument('-g', '--gif', help='Create a GIF token', action='store_true')
@@ -99,7 +99,6 @@ for k, v in argsList.items(): # run through args list
       print(f"\n{color.YELLOW}Storyboard URL:{color.END}\n")
       print(f"https://image.mux.com/{playbackID}/storyboard.png?token={token}")
     elif k == "thumbnail":
-
       print(f'\n{color.GREEN}Thumbnail Token: {color.END}\n')
       token = createTheToken(playbackID, aud="t")
       print(token)
