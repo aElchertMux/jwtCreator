@@ -41,7 +41,7 @@ playbackID = args.playbackID
 ############################
 # GLOBALs
 ############################
-apiKeys = load_dotenv("") # enter file name of .env in cwd 
+apiKeys = load_dotenv("apiKeys.env") # enter file name of .env in cwd 
 video_signing_key_id = str(os.getenv("video_signing_key_id")) #in the env file have them named like this
 video_private_key_base64 = str(os.getenv("video_private_key_base64")) # <<-- 
 private_key = base64.b64decode(video_private_key_base64)
