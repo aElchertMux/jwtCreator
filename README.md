@@ -11,7 +11,6 @@ positional arguments:
 
 optional arguments:
   -h, --help        show this help message and exit
-  -v, --video       Create a VIDEO token
   -v, --video       Create a VIDEO token [ DEFAULT ]
   -s, --storyboard  Create a STORYBOARD token
   -t, --thumbnail   Create a THUMBNAIL token
