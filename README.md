@@ -3,6 +3,8 @@ CLI tool for easy JWT token creation for help debugging Mux support cases.
 
 I got very tired of editing a single script for a single token. Using this as a jump off point for ways to make troubleshooting signed assets easier.
 
+Add the flag (i.e. -h) of whatever type of JWT token you wish to create. The default is a VIDEO token.
+
 ```
 usage: jwtCreator.py [-h] [-v] [-s] [-t] [-g] playbackID
 
@@ -16,7 +18,4 @@ optional arguments:
   -t, --thumbnail   Create a THUMBNAIL token
   -g, --gif         Create a GIF token
 ```
-
-
-
 ![CLI Image](https://dl.dropboxusercontent.com/s/j7xozs66wf4z2pl/mux-jwtCreator.gif?dl=0)
