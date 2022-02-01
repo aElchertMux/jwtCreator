@@ -1,7 +1,5 @@
 # jwtCreator
-CLI tool for easy JWT token creation for help debugging Mux support cases. 
-
-I got very tired of editing a single script for a single token. Using this as a jump off point for ways to make troubleshooting signed assets easier.
+CLI tool for easy JWT token creation for Mux.com
 
 Add the flag (i.e. -h) of whatever type of JWT token you wish to create. The default is a VIDEO token.
 
