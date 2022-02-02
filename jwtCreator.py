@@ -35,6 +35,7 @@ parser.add_argument('-g', '--gif', help='Create a GIF token', action='store_true
 args = parser.parse_args()
 # create list of tokens requested: True and False
 argsList = {"video": args.video, "storyboard": args.storyboard, "thumbnail": args.thumbnail, "gif": args.gif}
+nameToLetterList = {"video": "v", "storyboard": "s", "gif": "g", "thumbnail": "t"}
 playbackID = args.playbackID
 ############################
 
@@ -79,30 +80,8 @@ def createTheToken(playbackID, aud):
 
 for k, v in argsList.items(): # run through args list
   if v is True: #if a flag is True, create that type of token
-    if k == "video":
-      print(f'\n{color.GREEN}Video Token: {color.END}\n')
-      token = createTheToken(playbackID, aud="v")
+      print(f'\n{color.GREEN}{k} token: {color.END}\n')
+      token = createTheToken(playbackID, aud=nameToLetterList[k])
       print(token)
-      print(f"\n{color.YELLOW}Video URL:{color.END}\n")
+      print(f"\n{color.YELLOW}{k} url:{color.END}\n")
       print(f"https://stream.mux.com/{playbackID}.m3u8?token={token}\n")
-    elif k == "gif":
-      print(f'\n{color.GREEN}Gif Token: {color.END}\n')
-      token = createTheToken(playbackID, aud="g")
-      print(token)
-      print(f"\n{color.YELLOW}Gif URL:{color.END}\n")
-      print(f"https://image.mux.com/{playbackID}/animated.gif?token={token}")
-    elif k == "storyboard":
-      #https://docs.mux.com/guides/video/create-timeline-hover-previews
-      print(f'\n{color.GREEN}Storyboard Token: {color.END}\n')
-      token = createTheToken(playbackID, aud="s")
-      print(token)
-      print(f"\n{color.YELLOW}Storyboard URL:{color.END}\n")
-      print(f"https://image.mux.com/{playbackID}/storyboard.png?token={token}")
-    elif k == "thumbnail":
-      print(f'\n{color.GREEN}Thumbnail Token: {color.END}\n')
-      token = createTheToken(playbackID, aud="t")
-      print(token)
-      print(f"\n{color.YELLOW}Thumbnail URL:{color.END}\n")
-      print(f"https://image.mux.com/{playbackID}/thumbnail.png?token={token}")
-    else:
-      print(Exception)
