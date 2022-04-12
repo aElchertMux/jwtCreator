@@ -21,17 +21,3 @@ optional arguments:
   -g, --gif         Create a GIF token
 ```
 ![CLI Image](https://dl.dropboxusercontent.com/s/j7xozs66wf4z2pl/mux-jwtCreator.gif?dl=0)
-
-
-jwtUniqueCounts.py
-* https://mux.com/blog/surface-real-time-view-and-unique-viewer-counts-in-your-video-player/
-
-```
-usage: jwtUniqueCounts.py [-h] playbackID
-
-positional arguments:
-  playbackID  The signed playbackID to create the token, url and pull the current view counts
-
-optional arguments:
-  -h, --help  show this help message and exit
-```
