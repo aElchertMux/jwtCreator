@@ -44,7 +44,7 @@ playbackID = args.playbackID
 ############################
 apiKeys = load_dotenv("apiKeys.env") # enter file name of .env in cwd 
 video_signing_key_id = str(os.getenv("video_signing_key_id")) #in the env file have them named like this
-video_private_key_base64 = str(os.getenv("video_private_key_base64")) # <<-- 
+video_private_key_base64 = str(os.getenv("video_private_key")) # <<-- 
 private_key = base64.b64decode(video_private_key_base64)
 # ############################
 
@@ -80,8 +80,15 @@ def createTheToken(playbackID, aud):
 
 for k, v in argsList.items(): # run through args list
   if v is True: #if a flag is True, create that type of token
-      print(f'\n{color.GREEN}{k} token: {color.END}\n')
+      print(f'\n{color.GREEN}{k.title()} Token: {color.END}\n')
       token = createTheToken(playbackID, aud=nameToLetterList[k])
       print(token)
-      print(f"\n{color.YELLOW}{k} url:{color.END}\n")
-      print(f"https://stream.mux.com/{playbackID}.m3u8?token={token}\n")
+      print(f"\n{color.YELLOW}{k.title()} URL:{color.END}\n")
+      if k == 'video':
+        print(f"https://stream.mux.com/{playbackID}.m3u8?token={token}\n")
+      elif k == 'storyboard':
+        print(f"https://image.mux.com/{playbackID}/storyboard.png?token={token}")
+      elif k == 'thumbnail':
+        print(f'https://image.mux.com/{playbackID}/thumbnail.png?token={token}')
+      elif k == 'gif':
+        print(f'https://image.mux.com/{playbackID}/animated.gif?token={token}')
